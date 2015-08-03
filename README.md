@@ -12,7 +12,11 @@ This module also provides two aliases:
 
 ## Installing
 
-If you have [PsGet](http://psget.net/) installed:
+Windows 10 users:
+
+    Install-Module PSClip -Scope CurrentUser
+
+Otherwise, if you have [PsGet](http://psget.net/) installed:
 
     Install-Module PSClip
   
