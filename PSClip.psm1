@@ -158,8 +158,3 @@ function Get-ClipboardText {
 Set-Alias scb Set-ClipboardText
 Set-Alias gcb Get-ClipboardText
 
-Export-ModuleMember `
-    -Function Set-ClipboardText, Get-ClipboardText `
-    -Alias scb, gcb
-
-
