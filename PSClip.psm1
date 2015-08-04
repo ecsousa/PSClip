@@ -20,7 +20,7 @@ public static extern bool CloseClipboard();
 
 [DllImport("user32.dll", SetLastError=true)]
 public static extern uint EnumClipboardFormats(uint format);
-"@
+"@ -ErrorAction SilentlyContinue
 
 function Assert-Win32CallSuccess {
     param(
@@ -47,13 +47,13 @@ function Use-Clipboard {
 
     $script:isClipboardOwned = $true
 
-    Assert-Win32CallSuccess {
+    Assert-Win32CallSuccess -NullIsError {
         [PowershellPlatformInterop.Clipboard]::OpenClipboard([IntPtr]::Zero)
     }
 
     try { & $Action }
     finally {
-        Assert-Win32CallSuccess {
+        Assert-Win32CallSuccess -NullIsError {
             [PowershellPlatformInterop.Clipboard]::CloseClipboard()
         }
 

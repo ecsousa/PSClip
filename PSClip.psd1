@@ -1,6 +1,6 @@
 @{
 RootModule = 'PSClip.psm1'
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0.1'
 GUID = '214771b8-166a-42af-a51a-010938bd43dc'
 Author = 'Eduardo Antunes C. de Sousa'
 Description = 'Clipboard Manipuation Function'
