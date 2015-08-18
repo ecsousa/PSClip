@@ -73,7 +73,7 @@ $ansiTextFormat = 1
 $unicodeTextFormat = 13
 
 function Set-ClipboardText {
-    param([Parameter(ValueFromPipeline=$true)][string]$Value)
+    param([Parameter(ValueFromPipeline=$true)][string]$Value, [switch] $Trim)
     begin {
         $textToCopy = $null
     }
@@ -82,7 +82,12 @@ function Set-ClipboardText {
             $textToCopy = $textToCopy + [Environment]::NewLine;
         }
 
-        $textToCopy = $textToCopy + $Value;
+        if($Trim) {
+            $textToCopy = $textToCopy + $Value.Trim();
+        }
+        else {
+            $textToCopy = $textToCopy + $Value;
+        }
     }
     end {
         Use-Clipboard {
@@ -114,6 +119,8 @@ function Get-ClipboardFormats {
 }
 
 function Get-ClipboardText {
+    param([switch] $Trim);
+
     Use-Clipboard {
         $formats = Get-ClipboardFormats
 
@@ -140,13 +147,19 @@ function Get-ClipboardText {
             $idx = $clip.IndexOf([System.Environment]::NewLine, $current);
 
             if($idx -eq -1) {
-                $clip.Substring($current);
+                $text = $clip.Substring($current);
                 $current = $idx
             }
             else {
-                $clip.Substring($current, $idx - $current);
+                $text = $clip.Substring($current, $idx - $current);
                 $current = $idx + 2
             }
+
+            if($Trim) {
+                $text = $text.Trim();
+            }
+
+            $text;
 
         }
 
