@@ -10,4 +10,8 @@ CLRVersion = '4.0'
 FunctionsToExport = 'Set-ClipboardText', 'Get-ClipboardText'
 AliasesToExport = 'scb', 'gcb'
 HelpInfoURI = 'https://github.com/ecsousa/PSClip'
+PrivateData = @{
+        Tags='Clipboard'
+        ProjectUri='https://github.com/ecsousa/PSClip'
+    }
 }
