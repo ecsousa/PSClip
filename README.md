@@ -20,4 +20,4 @@ Otherwise, if you have [PsGet](http://psget.net/) installed:
 
     Install-Module PSClip
   
-Or you can install it manually coping `PSClip.psm1` to your modules folder (e.g. ` $Env:USERPROFILE\Eduardo_Sousa\Documents\WindowsPowerShell\Modules\PSClip\`)
+Or you can install it manually coping `PSClip.psm1` to your modules folder (e.g. ` $Env:USERPROFILE\Documents\WindowsPowerShell\Modules\PSClip\`)
