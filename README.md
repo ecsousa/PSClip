@@ -1,5 +1,9 @@
 # PSClip
 
+_**NOTE:** Latest PowerShell versions already have Clipboard functionalities out of the box: Get-Clipboard and Set-Clipboard Cmdlets, gcb and scb aliases._
+
+_So, I would recommended everyone updating PowerShell rather them using PSClip._
+
 PowerShell module for clipboard manipulation. It provides two functions:
 
 * `Set-ClipboardText`: Sets clipboard content with provided text, which can be passed as parameter, or read from pipeline
